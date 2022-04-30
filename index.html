@@ -13,12 +13,12 @@
         <h1>Verificador de Idade</h1>
     </header>
     <main>
-        <form>  <!-- method="post" enviar formulario-->
+        <form action="#">  <!-- method="post" enviar formulario-->
             <section class="conteiner">
                 <fieldset>
                     <div>
                         <label for="birthday">Ano de Nascimento:</label>
-                        <input type="number" name="birthday" id="birthday" min="1" autofocus>
+                        <input type="number" name="birthday" id="birthday" min="1" autofocus required>
                     </div>
                 </fieldset>
                 <fieldset>
@@ -29,7 +29,7 @@
                         <input type="radio" name="fsexo" id="women">
                         <label for="women">Mulher</label>
                     </div>
-                        <button class="btn" onclick="verificar()">verificar</button>
+                        <button class="btn" id="verificar">verificar</button>
                         <section id="result">
                             <p>Preencha os dados acima para ver o resultado</p>
                         </section>
@@ -37,6 +37,8 @@
             </section>
         </form>
     </main>
+
+    <script src="assets/script.js"></script>
     <footer>
         <p>&copy; by <a href="https://github.com/jhonatasv" target="_blank">jhonatas</a></p>
     </footer>
