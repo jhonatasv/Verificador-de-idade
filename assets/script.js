@@ -66,7 +66,7 @@ verificar.addEventListener('click', function verificar(){
 
         result.innerHTML = `<p>Detectamos uma pessoa de ${idade} do sexo ${genero}</p>`
         result.appendChild(img)
-        document.querySelector('#foto').style.margin = '10px'
+        document.querySelector('#foto').style.margin = '15px'
         result.style.textAlign = 'center'
     }
 
