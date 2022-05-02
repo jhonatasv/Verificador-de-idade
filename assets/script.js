@@ -45,7 +45,7 @@ verificar.addEventListener('click', function verificar(){
         img.setAttribute('id', 'foto')
 
         if(sexo[0].checked) {
-            genero = 'Masculino'
+            genero = 'Homem'
 
             if (idade >= 0 && idade < 2) { //0 a 2
                 img.setAttribute('src', '/assets/img/bebe.m.jpg')
@@ -64,7 +64,7 @@ verificar.addEventListener('click', function verificar(){
             //crinça
         }
 
-        result.innerHTML = `<p>Detectamos uma pessoa de ${idade} do sexo ${genero}</p>`
+        result.innerHTML = `<p>Detectamos um ${genero} com ${idade} anos.</p>`
         result.appendChild(img)
         document.querySelector('#foto').style.margin = '15px'
         result.style.textAlign = 'center'
