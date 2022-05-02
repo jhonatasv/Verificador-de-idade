@@ -1,6 +1,11 @@
 @media (max-width: 459px) {
     .conteiner {
         width: 370px;
+        height: 390px
+    }
+
+    #foto {
+        width: 200px;
     }
 }
 
@@ -45,7 +50,7 @@
     }
     
     #foto {
-        width: 200px;
+        width: 185px;
     }
 }
 

@@ -45,7 +45,7 @@ verificar.addEventListener('click', function verificar(){
             } else if(idade <= 59) {
                 img.setAttribute('src', '/assets/img/adulto.f.jpg')
             } else {
-                img.setAttribute('src', 'assets/img/idosa.f.jpg')
+                img.setAttribute('src', '/assets/img/idosa.f.jpg')
             }
  
         }
