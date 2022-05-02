@@ -6,8 +6,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: none;
     text-decoration: none;
+    border: none;
+    outline: none;
     transition: all 0.5s ease;
 }
 
@@ -24,6 +25,7 @@ body {
     background:linear-gradient(120deg, #70ABEB, #7A28F7);
     font-family: Arial, Helvetica, sans-serif;
     height: 50vh;
+    overflow: hidden; 
 }
 
 header {
@@ -53,12 +55,23 @@ input:nth-last-child(1) {
     padding: 4px 7px;
     width: 180px;
     color: #333;
-    transition: all 0.5s ease;
-    margin-left: 0;
 }
 
-input {
-    margin-left: 5px; 
+input:nth-last-child(1):hover {
+    border-color: #70ABEB;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input[type=radio]{
+    margin-left: 5px;
 }
 
 .btn {
@@ -68,7 +81,7 @@ input {
     border-radius: 4px;
     transition: all 0.10s cubic-bezier(0, 0.78, 1, 0.62);
     font-weight: normal;
-    letter-spacing: 1px;
+    letter-spacing: 0.9px;
     background-color: var(---cor-btn);
 }
 
