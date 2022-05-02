@@ -16,6 +16,7 @@
     ---btn-hover: #1565f881;
     ---cor-footer: #0c0101;
     ---cor-footer-link:#0c0101;
+    ---background-link: #07d1f5e3;
 }
 
 body {
@@ -88,12 +89,29 @@ footer {
 }
 
 footer a {
+    position: relative;
     color: var(---cor-footer-link);
     text-decoration: none;
+    letter-spacing: 0.9px;
+    padding-left: 1px;
+}
+
+footer a::after {
+    content: "";
+    position: absolute;
+    background-color: var(---background-link);
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -10px;
+    transition: all 0.5s ease;
+}
+
+footer a:hover::after {
+    width: 100%;
+    transition: all 0.5s ease;
 }
 
 footer a:hover {
-    text-decoration: underline;
-    background-color: #0000001a;
-    border-radius: 4px;
+    color: #ffffff8e;
 } 
