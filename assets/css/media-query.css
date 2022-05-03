@@ -4,7 +4,7 @@
     }
 
     #foto {
-        width: 200px;
+        width: 250px;
     }
 }
 
@@ -28,10 +28,15 @@
     }
     .conteiner {
         width: 310px;
+        height: 400px;
     }
 
     input:nth-last-child(1) {
         width: 110px;
+    }
+
+    #foto {
+        width: 200px;
     }
 }
 
@@ -48,6 +53,9 @@
         width: 90px;
     }
     
+    p {
+        /* font-size: 15px; */
+    }
     #foto {
         width: 185px;
     }
