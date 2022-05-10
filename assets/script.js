@@ -1,43 +1,47 @@
-verificar.addEventListener('click', function verificar(){
-    const data = new Date()
-    let ano = data.getFullYear()
-    let birthday = document.querySelector('#birthday').value
-    let result = document.querySelector('#result')
-    let idade = ano - Number(birthday)
+const data = new Date()
+const anoAtual = data.getFullYear()
+
+const inputBirth = document.querySelector('#birthday')
+const res = document.querySelector('#result')
+const verificar = document.querySelector('#btn')
+
+verificar.addEventListener('click', function verificar() {
+    let birthValue = Number(inputBirth.value)
+    let idade = anoAtual - birthValue  
     
-    if(birthday > ano){ 
-        result.innerHTML = alert(`[Erro], Verifique os Dados`)
-        result.innerHTML = `<p>Você veio do futuro? Verifique a Data de Nascimento</p>`
-   
-    } else if (birthday.length == 0) {
-        result.innerHTML = `<p>Ops.. você esqueceu de Preenche o Ano de Nascimento</p>`
+    
+    if (birthValue > anoAtual) {
+        alert(`[Erro], Verifique os Dados.`)
+        res.innerHTML = `<p>Um viajante do Tempo? Verifique a Data de Nascimento</p>`
+        
+    } else if(inputBirth.value.length === 0) {
+        res.innerHTML = `<p>Ops.. Verifique e Preencha o Ano Corretamente.</p>`
 
-    } else if(birthday.length > 5 || idade > 121) {
-        result.innerHTML = `<p>Data invalida. Tente Novamente</p>`
-
+    } else if(inputBirth.value.length > 5 || idade > 121) {
+        res.innerHTML = `<p class="msg-erro">Ano invalido. Tente Novamente</p>`
+    
     } else {
         let sexo = document.getElementsByName('fsexo')
         let genero = ''
-        let img = document.createElement('img')
+        const img = document.createElement('img')
         img.setAttribute('id', 'foto')
 
         if(sexo[0].checked) {
-        genero = 'Homem'
-        if (idade >= 0 && idade < 2) { 
-            img.setAttribute('src', 'assets/img/bebe.m.jpg')
-        } else if(idade < 12) {
-            img.setAttribute('src', 'assets/img/crianca.m.jpg')
+            genero = 'Homem'
+            if(idade >= 0 && idade < 2) {
+                img.setAttribute('src', 'assets/img/bebe.m.jpg')
+            } else if(idade < 12) {
+                img.setAttribute('src', 'assets/img/crianca.m.jpg')
             } else if(idade < 24) {
                 img.setAttribute('src', 'assets/img/adolescente.m.jpg')
-            } else if(idade <= 59) {
+            } else if(idade <= 59 ) {
                 img.setAttribute('src', 'assets/img/adulto.m.png')
             } else {
                 img.setAttribute('src', 'assets/img/idoso.m.jpg')
             }
 
-        } else if(sexo[1]) {
-            genero ='Mulher'
-
+        } else if(sexo[1].checked){
+            genero = 'Mulher'
             if(idade >= 0 && idade < 2) {
                 img.setAttribute('src', 'assets/img/bebe.f.jpg')
             } else if(idade < 12) {
@@ -49,12 +53,12 @@ verificar.addEventListener('click', function verificar(){
             } else {
                 img.setAttribute('src', 'assets/img/idosa.f.jpg')
             }
+        }   
 
-        }
-
-        result.innerHTML = `<p>Detectamos um ${genero} com ${idade} anos.</p>`
-        result.appendChild(img)
-        result.style.textAlign = 'center'
+        res.innerHTML = `<p>Detectamos um ${genero} com ${idade} anos.</p>`
+        res.appendChild(img)
+        res.style.textAlign = 'center'
         document.querySelector('#foto').style.margin = '15px'
-    }
+    }   
+
 })
