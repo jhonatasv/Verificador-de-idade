@@ -7,19 +7,19 @@ const verificar = document.querySelector('#btn')
 
 verificar.addEventListener('click', function verificar() {
     let birthValue = Number(inputBirth.value)
-    let idade = anoAtual - birthValue  
+    let idade = anoAtual - birthValue
     
     
     if (birthValue > anoAtual) {
-        alert(`[Erro], Verifique os Dados.`)
-        res.innerHTML = `<p>Um viajante do Tempo? Verifique a Data de Nascimento</p>`
+       // alert(`[Erro], Verifique os Dados.`)
+        res.innerHTML = `<p class="msg-erro">Um viajante do Tempo? Verifique a Data de Nascimento</p>`
         
     } else if(inputBirth.value.length === 0) {
-        res.innerHTML = `<p>Ops.. Verifique e Preencha o Ano Corretamente.</p>`
+        res.innerHTML = `<p class="msg-erro">Ops.. Verifique e Preencha o Ano Corretamente.</p>`
 
     } else if(inputBirth.value.length > 5 || idade > 121) {
-        res.innerHTML = `<p class="msg-erro">Ano invalido. Tente Novamente</p>`
-    
+       res.innerHTML = `<p class="msg-erro">Ano invalido. Tente Novamente</p>`      
+        
     } else {
         let sexo = document.getElementsByName('fsexo')
         let genero = ''
@@ -53,12 +53,12 @@ verificar.addEventListener('click', function verificar() {
             } else {
                 img.setAttribute('src', 'assets/img/idosa.f.jpg')
             }
-        }   
+        }
 
         res.innerHTML = `<p>Detectamos um ${genero} com ${idade} anos.</p>`
         res.appendChild(img)
         res.style.textAlign = 'center'
         document.querySelector('#foto').style.margin = '15px'
-    }   
+    }
 
 })
