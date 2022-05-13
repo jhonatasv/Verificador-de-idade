@@ -8,18 +8,37 @@ const verificar = document.querySelector('#btn')
 verificar.addEventListener('click', function verificar() {
     let birthValue = Number(inputBirth.value)
     let idade = anoAtual - birthValue
-    
-    
+
+    const spanError = document.createElement('span')
+    spanError.setAttribute('id', 'span-error')
+
     if (birthValue > anoAtual) {
-       // alert(`[Erro], Verifique os Dados.`)
-        res.innerHTML = `<p class="msg-erro">Um viajante do Tempo? Verifique a Data de Nascimento</p>`
-        
+        res.innerHTML = '';
+        res.appendChild(spanError)
+        spanError.innerHTML = `<p class="msg-erro">Um viajante do Tempo? Verifique a Data de Nascimento</p>`
+       
+        setTimeout(() => {
+            spanError.innerHTML = '';
+        }, 3000)
+
     } else if(inputBirth.value.length === 0) {
-        res.innerHTML = `<p class="msg-erro">Ops.. Verifique e Preencha o Ano Corretamente.</p>`
+        res.innerHTML = '';
+        res.appendChild(spanError)
+        spanError.innerHTML = `<p class="msg-erro">Ops.. Verifique e Preencha o Ano Corretamente.</p>`
+        
+        setTimeout(() => {
+            spanError.innerHTML = '';
+        }, 3000)
 
     } else if(inputBirth.value.length > 5 || idade > 121) {
-       res.innerHTML = `<p class="msg-erro">Ano invalido. Tente Novamente</p>`      
+        res.innerHTML = '';
+        res.appendChild(spanError)
+        spanError.innerHTML = `<p class="msg-erro">Ano invalido. Tente Novamente</p>`
         
+        setTimeout(() => {
+            spanError.innerHTML = '';
+        }, 3000)
+
     } else {
         let sexo = document.getElementsByName('fsexo')
         let genero = ''
