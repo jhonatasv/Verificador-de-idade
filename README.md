@@ -2,9 +2,7 @@
   <img width="550px" src="https://user-images.githubusercontent.com/88457552/166815422-37dffa00-32f7-4bd9-98bc-9761eeb81e38.PNG"/>
 </div>
 
-<p align="center">
- <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
-</p>
+
 
 <p align="center">
   <img src="https://img.shields.io/github/license/jhonatasv/Verificador-de-idade?style=flat-square"/>
